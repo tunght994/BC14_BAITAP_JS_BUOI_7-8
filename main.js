@@ -7,6 +7,8 @@ var btnEven = document.querySelector('#btnEven')
 var btnExNum = document.querySelector('#btnExNum')
 var btnSort =document.querySelector('#btnSort')
 var btnPrime = document.querySelector('#btnPrime')
+var btnInteger = document.querySelector('#btnInteger')
+var btnCompare = document.querySelector('#btnCompare')
 
 var numberArr = []
 
@@ -55,7 +57,7 @@ function numberMin() {
     var resultMin = document.querySelector('.resultMin')
     btnMin.onclick = function() {
         var min = Math.min.apply(Math, numberArr);
-        resultMin.innerHTML ="Số nhỏ nhất là: " + min;
+        resultMin.innerHTML ='Số nhỏ nhất là: ' + min
     }
 }
 numberMin()
@@ -117,12 +119,11 @@ NumberExchange()
 function numberSort () {
     var resultsort = document.querySelector('.resultsort')
     btnSort.onclick = function () {
-        var arraySort = array.slice()
-        arraySort.sort(function (a, b) {
-            return a - b;
-        });
+        numberArr.sort(function(a, b) {
+            return a - b
+        })
         
-        resultsort.innerHTML = arraySort
+        resultsort.innerHTML = numberArr
     }
 }
 numberSort ()
@@ -130,19 +131,90 @@ numberSort ()
 function numberPrime () {
     var resultprimeNum = document.querySelector('.resultprimeNum')
     btnPrime.onclick = function () {
-        var prime = -1;
-        for (let i = 0; i < array.length; i++) {
-            if(isPrime(array[i])){
-                prime = array[i];
-                break;
+        for ( var i = 0; i < numberArr.length; i++) {
+            if (checkInteger(numberArr[i])) {
+                resultprimeNum.innerHTML = "Số nguyên tố đầu tiên trong mảng là: " + numberArr[i]; 
+                return; 
             }
         }
-        if(prime == -1){
-            resultprimeNum.innerHTML = 'Dont have any prime value in array'
-        }
-        else{
-            resultprimeNum.innerHTML = prime
-        }
+        resultprimeNum.innerHTML = "Không có số nguyên tố: " + -1;  
     }
 }
+
+function checkInteger(n) {
+    if (n < 2) {
+        return false;
+    } else {
+        for ( var i = 2; i <= Math.sqrt(n); i++) {
+            if ( n % i == 0) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
 numberPrime()
+
+var integerNum = document.querySelector('.integerNum')
+var printInteger = document.querySelector('.printInteger')
+var doubleArr = []
+
+function numInteger () {
+    btnInteger.onclick = function() {
+        var addInteger = parseFloat(document.querySelector('.addInteger').value)
+        doubleArr.push(addInteger)
+        document.querySelector('.addInteger').value = ''
+    
+        addRealArr()
+    
+        var countInte = 0
+        for (var i = 0; i < doubleArr.length; i++ ) {
+            if (IsInt(doubleArr[i])) {
+                countInte ++
+            }    
+        }
+        printInteger.innerText = 'Số nguyên trong mảng là: ' + countInte
+    }
+}
+
+function addRealArr() {
+    integerNum.innerHTML = doubleArr.map(function (newItem) {
+        return `<span>${newItem}</span>`
+    }).join(',')
+}
+
+function IsInt(n) {
+    return n % 1 === 0
+}
+
+numInteger()
+
+function compareInteger () {
+    var resultCompare = document.querySelector('.resultCompare');
+    btnCompare.onclick = function () {
+        var integerPositive = 0
+        var integerNegative = 0
+    
+        for (var i = 0; i < numberArr.length; i++) {
+            if (numberArr[i] < 0) {
+                integerNegative = integerNegative + 1
+            } else {
+                integerPositive = integerPositive + 1
+            }
+        }
+        resultCompare.innerHTML = 'Số âm: ' + integerNegative + ' ' + 'Số dương: ' + integerPositive
+    
+        var printCompare = document.querySelector('.printCompare');
+    
+        if (integerPositive > integerNegative) {
+            printCompare.innerHTML = 'Số dương lớn hơn số âm'
+        } else if (integerPositive < integerNegative) {
+            printCompare.innerHTML = 'Số âm lớn hơn số dương'
+        } else {
+            printCompare.innerHTML = 'Số âm bằng số dương'
+        }
+
+    }
+
+}
+compareInteger()
