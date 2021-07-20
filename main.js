@@ -23,8 +23,7 @@ function addArr() {
     }
 }
 addArr()
-
-
+//  1. Tổng các số dương trong mảng.
 function sumArr () {
     var result = document.querySelector('.result')
     btnSum.onclick = function() {
@@ -38,7 +37,7 @@ function sumArr () {
     }
 }
 sumArr()
-
+// 2. Đếm có bao nhiêu số dương trong mảng.
 function count () {
     var resultCount = document.querySelector('.resultCount')
      btnCount.onclick = function() {
@@ -52,7 +51,7 @@ function count () {
      }
 }
 count()
-
+// 3. Tìm số nhỏ nhất trong mảng.
 function numberMin() {
     var resultMin = document.querySelector('.resultMin')
     btnMin.onclick = function() {
@@ -61,7 +60,7 @@ function numberMin() {
     }
 }
 numberMin()
-
+// 4. Tìm số dương nhỏ nhất trong mảng.
 function numberPosMin() {
     var resultPosMin = document.querySelector('.resultPosMin')
     btnPos.onclick = function() { 
@@ -82,7 +81,7 @@ function numberPosMin() {
 
 }
 numberPosMin()
-
+// 5. Tìm số chẵn cuối cùng trong mảng. Nếu mảng không có giá trị chẵn thì trả về -1.
 function numberEven (){
     var resultEven = document.querySelector('.resultEven')
     btnEven.onclick = function() {
@@ -101,7 +100,7 @@ function numberEven (){
     }
 }
 numberEven()
-
+// 6. Đổi chỗ 2 giá trị trong mảng theo vị trí (Cho nhập vào 2 vị trí muốn đổi chỗ giá trị).
 function NumberExchange () {
     var NumberExchange = document.querySelector('.resultNumberExchange')
     btnExNum.onclick = function () {
@@ -115,7 +114,7 @@ function NumberExchange () {
     }
 }
 NumberExchange()
-
+// 7. Sắp xếp mảng theo thứ tự tăng dần
 function numberSort () {
     var resultsort = document.querySelector('.resultsort')
     btnSort.onclick = function () {
@@ -127,7 +126,7 @@ function numberSort () {
     }
 }
 numberSort ()
-
+// 8. Tìm số nguyên tố đầu tiên trong mảng. Nếu mảng không có số nguyên tố thì trả về – 1.
 function numberPrime () {
     var resultprimeNum = document.querySelector('.resultprimeNum')
     btnPrime.onclick = function () {
@@ -155,6 +154,7 @@ function checkInteger(n) {
 }
 numberPrime()
 
+// 9. Nhập thêm 1 mảng số thực, tìm xem trong mảng có bao nhiêu số nguyên?
 var integerNum = document.querySelector('.integerNum')
 var printInteger = document.querySelector('.printInteger')
 var doubleArr = []
@@ -186,9 +186,9 @@ function addRealArr() {
 function IsInt(n) {
     return n % 1 === 0
 }
-
 numInteger()
 
+// 10. So sánh số lượng số dương và số lượng số âm xem số nào nhiều hơn.
 function compareInteger () {
     var resultCompare = document.querySelector('.resultCompare');
     btnCompare.onclick = function () {
