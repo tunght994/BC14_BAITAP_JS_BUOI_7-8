@@ -1,0 +1,40 @@
+.container {
+    width: 40%;
+}
+
+.exercise-section h3 {
+    background-color: cornflowerblue;
+    color: cornsilk;
+}
+
+.numberAdd {
+    text-align: center;
+    font-size: 20px;
+}
+
+.card-title {
+    text-align: center;
+}
+
+
+.changeNum i {
+    margin: 0 25px;
+}
+
+.exchangeNumber {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.ipIndex1, .ipIndex2 {
+    text-align: center;
+}
+
+.addInteger {
+    text-align: center;
+}
+
+.integerNum {
+    margin-top: 15px;
+    font-size: 20px;
+}
